@@ -64,7 +64,7 @@ string myStack::print()const {
     } else {
         for (int i = 0; i < index; i++) {
             // cout << stack[i] << " ";
-            s += stack[i];
+            s += to_string(stack[i]);
         }
     }
 
