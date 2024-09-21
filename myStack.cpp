@@ -18,12 +18,15 @@ myStack::myStack() {
 
 // for member stack push
 bool myStack::push(int a) {
-    if (index < MAX_SIZE) {
+    if (index < MAX_SIZE-1) {
         index++;
         stack[index] = a;
+        cout << index << endl;
         return true;
-    } else return false;
-
+    } else {
+        cout << index << endl;
+        return false;
+    }
 }
 
 // member stack pop
@@ -38,7 +41,7 @@ int myStack::top()const {
     if (index == -1) {
         return -1;
     } else {
-        return index;
+        return stack[index];
     }
 }
 
@@ -52,17 +55,20 @@ bool myStack::full() {
     else return false;
 }
 
-string myStack::print() {
+string myStack::print()const {
     string s = "";
-    if (empty()==true) {
-        cout << "The stack is empty" << endl;
+    cout << index << endl;
+    if (index == -1) {
+        // cout << "The stack is empty" << endl;
         s = "The stack is empty";
     } else {
         for (int i = 0; i < index; i++) {
-            cout << stack[i] << " ";
-            s += stack[i] + " ";
+            // cout << stack[i] << " ";
+            s += stack[i];
         }
     }
+
+    cout << s + "\n";
     return s;
 }
 

@@ -23,5 +23,5 @@ class myStack {
         int top()const;
         bool empty();
         bool full();
-        string print();
+        string print()const;
 };
